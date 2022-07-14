@@ -31,8 +31,8 @@ spec:
     app: emailservice
   ports:
     - protocol: TCP
-    port: 5000
-    targetPort: 8080
+      port: 5000
+      targetPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -68,8 +68,8 @@ spec:
     app: recommendationservice
   ports:
     - protocol: TCP
-    port: 8080
-    targetPort: 8080
+      port: 8080
+      targetPort: 8080
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -103,8 +103,8 @@ spec:
     app: productcatalogservice
   ports:
     - protocol: TCP
-    port: 3550
-    targetPort: 3550
+      port: 3550
+      targetPort: 3550
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -138,8 +138,8 @@ spec:
     app: paymentservice
   ports:
     - protocol: TCP
-    port: 50051
-    targetPort: 50051
+      port: 50051
+      targetPort: 50051
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -173,8 +173,8 @@ spec:
     app: currencyservice
   ports:
     - protocol: TCP
-    port: 7000
-    targetPort: 7000
+      port: 7000
+      targetPort: 7000
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -208,8 +208,8 @@ spec:
     app: shippingservice
   ports:
     - protocol: TCP
-    port: 50051
-    targetPort: 50051
+      port: 50051
+      targetPort: 50051
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -243,8 +243,8 @@ spec:
     app: adservice
   ports:
     - protocol: TCP
-    port: 9555
-    targetPort: 9555
+      port: 9555
+      targetPort: 9555
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -280,8 +280,8 @@ spec:
     app: cartservice
   ports:
     - protocol: TCP
-    port: 7070
-    targetPort: 7070
+      port: 7070
+      targetPort: 7070
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -318,8 +318,8 @@ spec:
     app: redis-cart
   ports:
     - protocol: TCP
-    port: 6379
-    targetPort: 6379
+      port: 6379
+      targetPort: 6379
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -365,8 +365,8 @@ spec:
     app: checkoutservice
   ports:
     - protocol: TCP
-    port: 5050
-    targetPort: 5050
+      port: 5050
+      targetPort: 5050
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -414,9 +414,9 @@ spec:
     app: frontend
   ports:
     - protocol: TCP
-    port: 80
-    targetPort: 8080
-    nodePort: 30007
+      port: 80
+      targetPort: 8080
+      nodePort: 30007
 
 
 
