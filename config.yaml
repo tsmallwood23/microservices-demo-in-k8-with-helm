@@ -121,7 +121,7 @@ spec:
     spec:
       containers:
         - name: paymentcontainer
-          image: gcr.io/google-samples/microservices-demo/paymentservice:v0.3.8
+          image: gcr.io/google-samples/microservices-demo/paymentservice:v0.3.0
           ports:
             - containerPort: 50051
           env:
@@ -162,6 +162,10 @@ spec:
           env:
             - name: PORT
               value: "7000"
+            - name: DISABLE_PROFILER
+              value: "1"
+            - name: DISABLE_DEBUGGER
+              value: "1"
 ---
 apiVersion: v1
 kind: Service
