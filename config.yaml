@@ -30,7 +30,7 @@ spec:
   selector:
     app: emailservice
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 5000
     targetPort: 8080
 ---
@@ -67,7 +67,7 @@ spec:
   selector:
     app: recommendationservice
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 8080
     targetPort: 8080
 ---
@@ -102,7 +102,7 @@ spec:
   selector:
     app: productcatalogservice
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 3550
     targetPort: 3550
 ---
@@ -137,7 +137,7 @@ spec:
   selector:
     app: paymentservice
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 50051
     targetPort: 50051
 ---
@@ -172,7 +172,7 @@ spec:
   selector:
     app: currencyservice
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 7000
     targetPort: 7000
 ---
@@ -207,7 +207,7 @@ spec:
   selector:
     app: shippingservice
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 50051
     targetPort: 50051
 ---
@@ -242,7 +242,7 @@ spec:
   selector:
     app: adservice
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 9555
     targetPort: 9555
 ---
@@ -279,7 +279,7 @@ spec:
   selector:
     app: cartservice
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 7070
     targetPort: 7070
 ---
@@ -317,7 +317,7 @@ spec:
   selector:
     app: redis-cart
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 6379
     targetPort: 6379
 ---
@@ -364,7 +364,7 @@ spec:
   selector:
     app: checkoutservice
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 5050
     targetPort: 5050
 ---
@@ -413,7 +413,7 @@ spec:
   selector:
     app: frontend
   ports:
-    protocol: TCP
+    - protocol: TCP
     port: 80
     targetPort: 8080
     nodePort: 30007
