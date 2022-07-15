@@ -35,10 +35,10 @@ spec:
               command: ["/bin/grpc_health_probe", "-addr=:8080"]
           resources:
             requests:
-              cpu: 100m
+              cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 150m
               memory: 128Mi
 ---
 apiVersion: v1
@@ -94,10 +94,10 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:8080" ]
           resources:
             requests:
-              cpu: 100m
+              cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 150m
               memory: 128Mi
 ---
 apiVersion: v1
@@ -145,10 +145,10 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:3550" ]
           resources:
             requests:
-              cpu: 100m
+              cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 150m
               memory: 128Mi
 ---
 apiVersion: v1
@@ -196,10 +196,10 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:50051" ]
           resources:
             requests:
-              cpu: 100m
+              cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 150m
               memory: 128Mi
 ---
 apiVersion: v1
@@ -251,10 +251,10 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:7000" ]
           resources:
             requests:
-              cpu: 100m
+              cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 150m
               memory: 128Mi
 ---
 apiVersion: v1
@@ -302,10 +302,10 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:50051" ]
           resources:
             requests:
-              cpu: 100m
+              cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 150m
               memory: 128Mi
 ---
 apiVersion: v1
@@ -359,10 +359,10 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:9555" ]
           resources:
             requests:
-              cpu: 200m
+              cpu: 150m
               memory: 128Mi
             limits:
-              cpu: 300m
+              cpu: 225m
               memory: 256Mi
 ---
 apiVersion: v1
@@ -412,10 +412,10 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:7070" ]
           resources:
             requests:
-              cpu: 100m
+              cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 150m
               memory: 128Mi
 ---
 apiVersion: v1
@@ -463,10 +463,10 @@ spec:
               port: 6379
           resources:
             requests:
-              cpu: 75m
+              cpu: 50m
               memory: 128Mi
             limits:
-              cpu: 125m
+              cpu: 100m
               memory: 312Mi
       volumes:
         - name: redis-data
@@ -529,10 +529,10 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:5050" ]
           resources:
             requests:
-              cpu: 100m
+              cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 150m
               memory: 128Mi
 ---
 apiVersion: v1
@@ -594,10 +594,10 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:8080" ]
           resources:
             requests:
-              cpu: 100m
+              cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 200m
+              cpu: 150m
               memory: 128Mi
 ---
 apiVersion: v1
