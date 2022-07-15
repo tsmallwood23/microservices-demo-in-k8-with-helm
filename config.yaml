@@ -585,14 +585,6 @@ spec:
             limits:
               cpu: 150m
               memory: 128Mi
-          livenessProbe:
-            periodSeconds: 5
-            exec:
-              command: [ "/bin/grpc_health_probe", "-addr=:8080" ]
-          readinessProbe:
-            periodSeconds: 5
-            exec:
-              command: [ "/bin/grpc_health_probe", "-addr=:8080" ]
 ---
 apiVersion: v1
 kind: Service
