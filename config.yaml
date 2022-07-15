@@ -38,7 +38,7 @@ spec:
               cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 150m
+              cpu: 150am
               memory: 128Mi
 ---
 apiVersion: v1
@@ -343,12 +343,6 @@ spec:
           env:
             - name: PORT
               value: "9555"
-            - name: DISABLE_TRACING
-              value: "1"
-            - name: DISABLE_PROFILER
-              value: "1"
-            - name: DISABLE_DEBUGGER
-              value: "1"
           livenessProbe:
             periodSeconds: 5
             exec:
@@ -359,10 +353,10 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:9555" ]
           resources:
             requests:
-              cpu: 150m
+              cpu: 200m
               memory: 128Mi
             limits:
-              cpu: 225m
+              cpu: 300m
               memory: 256Mi
 ---
 apiVersion: v1
@@ -594,7 +588,7 @@ spec:
               command: [ "/bin/grpc_health_probe", "-addr=:8080" ]
           resources:
             requests:
-              cpu: 75m
+              cpu: 100m
               memory: 64Mi
             limits:
               cpu: 150m
