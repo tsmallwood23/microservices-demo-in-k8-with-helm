@@ -4,6 +4,7 @@ kind: Deployment
 metadata:
   name: emailservice
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: emailservice
@@ -32,6 +33,13 @@ spec:
             periodSeconds: 5
             exec:
               command: ["/bin/grpc_health_probe", "-addr=:8080"]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -51,6 +59,7 @@ kind: Deployment
 metadata:
   name: recommendationservice
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: recommendationservice
@@ -83,6 +92,13 @@ spec:
             periodSeconds: 5
             exec:
               command: [ "/bin/grpc_health_probe", "-addr=:3550" ]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -102,6 +118,7 @@ kind: Deployment
 metadata:
   name: productcatalogservice
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: productcatalogservice
@@ -120,12 +137,20 @@ spec:
               value: "3550"
           livenessProbe:
             periodSeconds: 5
-            exec:
-              command: [ "/bin/grpc_health_probe", "-addr=:3550" ]
+            httpGet:
+              path: /health
+              port: 3550
           readinessProbe:
             periodSeconds: 5
             exec:
               command: [ "/bin/grpc_health_probe", "-addr=:3550" ]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -145,6 +170,7 @@ kind: Deployment
 metadata:
   name: paymentservice
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: paymentservice
@@ -169,6 +195,13 @@ spec:
             periodSeconds: 5
             exec:
               command: [ "/bin/grpc_health_probe", "-addr=:50051" ]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -188,6 +221,7 @@ kind: Deployment
 metadata:
   name: currencyservice
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: currencyservice
@@ -216,6 +250,13 @@ spec:
             periodSeconds: 5
             exec:
               command: [ "/bin/grpc_health_probe", "-addr=:7000" ]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -235,6 +276,7 @@ kind: Deployment
 metadata:
   name: shippingservice
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: shippingservice
@@ -259,6 +301,13 @@ spec:
             periodSeconds: 5
             exec:
               command: [ "/bin/grpc_health_probe", "-addr=:50051" ]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -278,6 +327,7 @@ kind: Deployment
 metadata:
   name: adservice
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: adservice
@@ -302,6 +352,13 @@ spec:
             periodSeconds: 5
             exec:
               command: [ "/bin/grpc_health_probe", "-addr=:9555" ]
+          resources:
+            requests:
+              cpu: 200m
+              memory: 128Mi
+            limits:
+              cpu: 300m
+              memory: 256Mi
 ---
 apiVersion: v1
 kind: Service
@@ -321,6 +378,7 @@ kind: Deployment
 metadata:
   name: cartservice
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: cartservice
@@ -347,6 +405,13 @@ spec:
             periodSeconds: 5
             exec:
               command: [ "/bin/grpc_health_probe", "-addr=:7070" ]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -366,6 +431,7 @@ kind: Deployment
 metadata:
   name: redis-cart
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: redis-cart
@@ -384,12 +450,19 @@ spec:
               mountPath: /data
           livenessProbe:
             periodSeconds: 5
-            exec:
-              command: [ "/bin/grpc_health_probe", "-addr=:6379" ]
+            tcpSocket:
+              port: 6379
           readinessProbe:
             periodSeconds: 5
-            exec:
-              command: [ "/bin/grpc_health_probe", "-addr=:6379" ]
+            tcpSocket:
+              port: 6379
+          resources:
+            requests:
+              cpu: 75m
+              memory: 128Mi
+            limits:
+              cpu: 125m
+              memory: 312Mi
       volumes:
         - name: redis-data
           emptyDir: {}
@@ -412,6 +485,7 @@ kind: Deployment
 metadata:
   name: checkoutservice
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: checkoutservice
@@ -448,6 +522,13 @@ spec:
             periodSeconds: 5
             exec:
               command: [ "/bin/grpc_health_probe", "-addr=:5050" ]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
@@ -467,6 +548,7 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: frontend
@@ -505,20 +587,26 @@ spec:
             periodSeconds: 5
             exec:
               command: [ "/bin/grpc_health_probe", "-addr=:8080" ]
+          resources:
+            requests:
+              cpu: 100m
+              memory: 64Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: frontend
+  name: frontend-external
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: frontend
   ports:
-    - protocol: TCP
+    - name: http
       port: 80
       targetPort: 8080
-      nodePort: 30007
 
 
 
