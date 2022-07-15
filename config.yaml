@@ -38,7 +38,7 @@ spec:
               cpu: 75m
               memory: 64Mi
             limits:
-              cpu: 150am
+              cpu: 150m
               memory: 128Mi
 ---
 apiVersion: v1
@@ -558,7 +558,7 @@ spec:
     spec:
       containers:
         - name: frontendcontainer
-          image: gcr.io/google-samples/microservices-demo/frontend:v0.3.8
+          image: gcr.io/google-samples/microservices-demo/frontend:v0.3.0
           ports:
             - containerPort: 8080
           env:
