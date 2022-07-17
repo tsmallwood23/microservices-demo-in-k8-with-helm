@@ -22,4 +22,4 @@ containerEnvVars:
     value: "checkoutservice:5050"
 
 servicePort: 80
-serviceType: ClusterIP
+serviceType: LoadBalancer
