@@ -1,3 +1,3 @@
 # online-shop-microservices
 
-Cloned the available Online Demo Microservices from Google and used it to practice deploying a fully fledged microservice application in Kubernetes.
+Used the available Online Demo Microservices from Google https://github.com/GoogleCloudPlatform/microservices-demo to practice deploying a fully fledged microservice application in Kubernetes.
